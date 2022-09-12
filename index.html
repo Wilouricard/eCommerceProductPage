@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; padding: 10px;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main class="main">
+    <!-- Header & Navigation -->
+    <header class="header">
+      <nav class="nav">
+
+        <div class="nav--group">
+
+          <div class="nav--menu d-lg-none">
+            <img src="images/icon-menu.svg" alt="">
+          </div>
+
+          <a class="nav--logo" href="">
+            <img src="images/logo.svg" alt="sneakers-logo">
+          </a>
+          
+          <ul class="nav--links d-md-none">
+            <li class="nav--item">
+              <a href="">
+                Collections
+              </a>
+            </li>
+            <li class="nav--item">
+              <a href="">
+                Men
+              </a>
+            </li>
+            <li class="nav--item">
+              <a href="">
+                Women
+              </a>
+            </li>
+            <li class="nav--item">
+              <a href="">
+                About
+              </a>
+            </li>
+            <li class="nav--item">
+              <a href="">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav--group">
+          <button id="user-cart" class="nav--cart">
+            <img src="images/icon-cart.svg" alt="Your Cart">
+            <span id="no-items" class="d-none"></span>
+          </button>
+          
+          <div id="user-profile" class="nav--profile">
+            <img class="user-profile-pic" src="images/image-avatar.png" alt="">
+          </div>
+        </div>
+      </nav>
+      <div class="cart-preview hidden">
+        <div class="preview-header">
+          <p>Cart</p>
+        </div>
+        <span class="separator"></span>
+        <div class="preview-body">
+        </div>
+      </div>
+    </header>
+
+    <nav class="md-nav hidden">
+      <button class="close-menu-btn">
+        <img src="./images/icon-close.svg" alt="close-menu">
+      </button>
+      <ul class="nav-wrapper">
+        <li class="nav-item"><a href="#">Collections</a></li>
+        <li class="nav-item"><a href="#">Men</a></li>
+        <li class="nav-item"><a href="#">Women</a></li>
+        <li class="nav-item"><a href="#">About</a></li>
+        <li class="nav-item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="md-nav-overlay hidden"></div>
+    <!-- Product content -->
+    <section class="container">
+      <div class="product-content">
+        <!-- Product Media Lightbox -->
+        <div class="product-lightbox">
+          <div class="showbox-wrapper">
+            <div class="product-showbox">
+              <div class="max-showbox d-md-none"></div>
+              
+            </div>
+            <div class="md-prev-btn d-lg-none arr-btn">
+              <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path class="arr-path" d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </div>
+            <div class="md-next-btn d-lg-none arr-btn">
+              <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path class="arr-path" d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </div>
+          </div>
+          <div class="product-thumbnails d-md-none">
+            
+          </div>
+        </div>
+        <!-- Product Shopping Purchasing Section -->
+        <div class="product-shopping">
+          <div class="product-detail">
+            <p class="company-name">Sneaker Company</p>
+            <h1 class="product-title"></h1>
+            <p>
+              These low-profile sneakers are your perfect casual wear companion. Featuring a 
+              durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+          </div>
+          <div class="product-price">
+            <div class="d-flex-auto">
+              <h2 class="current-price"></h2>
+              <span class="discount-percent"></span>
+            </div>
+            <p class="origin-price"></p>
+          </div>
+          <div class="product-purchase">
+            <div class="good-quantity">
+              <button class="reduce-product quantity-btn" disabled>
+                <img src="./images/icon-minus.svg" alt="reduce-product-quantity">
+              </button>
+              <span class="num-products">
+                
+              </span>
+              <button class="add-product quantity-btn">
+                <img src="./images/icon-plus.svg" alt="add-product-quantity">
+              </button>
+            </div>
+            <button class="add-to-cart-btn d-flex-auto"> 
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#ffffff" fill-rule="nonzero"/></svg>
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      
+    </section>
+    <div class="product-carousel-overlay d-none d-md-none">
+        <div class="carousel-wrapper">
+          <div class="close-carousel">
+            <button class="close-carousel-btn">
+              <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path id="close-path" d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+          <div class="carousel-showbox">
+            <div class="prev-btn arr-btn">
+              <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path class="arr-path" d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </div>
+            <div class="next-btn arr-btn">
+              <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path class="arr-path" d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </div>
+          </div>
+          <div class="carousel-thumbnails">
+          </div>
+        </div>
+    </div>
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    <!-- Lien portfolio à mettre quand il sera prêt  -->
+    Coded by <a href="" rel="noreferrer">Wilou</a>.
+  </div>
+  <script>
+    // Installation des fonts de Google
+    document.querySelector('head').innerHTML += `
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    `;
+
+    // Preloading des images pour une meilleure UX sur Mobiles
+
+    function preloadImage(url){
+      var img=new Image();
+      img.src=url;
+    }
+
+    preloadImage('./images/image-product-1.jpg');
+    preloadImage('./images/image-product-2.jpg');
+    preloadImage('./images/image-product-3.jpg');
+    preloadImage('./images/image-product-4.jpg');
+  </script>
+  <!-- JS linker -->
+  <script src="index.js"></script>
+</body>
+</html>
